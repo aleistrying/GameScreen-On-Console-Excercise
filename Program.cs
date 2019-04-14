@@ -1,46 +1,55 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Excercise15
+namespace Exercise5C2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=============");
-            Console.WriteLine("Menu:");
-            Console.WriteLine("1 − New Game");
-            Console.WriteLine("2 − Load Game");
-            Console.WriteLine("3 − Options");
-            Console.WriteLine("4 − Quit");
-            Console.WriteLine("=============");
-            Console.WriteLine("");
-            Console.Write("Select the option from the menu");
-            Console.WriteLine();
-            int input = int.Parse(Console.ReadLine());
-            Console.WriteLine("Loading  game . . .");
-            if(input == 1)
+            bool on = true;
+            while (on == true)
             {
-                Console.WriteLine("You selected a new game file");
+                Console.WriteLine("∗∗∗∗∗∗∗∗∗∗∗∗∗");
+                Console.WriteLine("Menu:");
+                Console.WriteLine("1−NewGame");
+                Console.WriteLine("2−LoadGame");
+                Console.WriteLine("3−Options");
+                Console.WriteLine("4−Quit");
+                Console.WriteLine("∗∗∗∗∗∗∗∗∗∗∗∗∗∗");
+                Console.WriteLine("");
+                Console.WriteLine("Choose a number from the menu");
+                int value = int.Parse(Console.ReadLine());
+                switch (value)
+                {
+                    case 1:
+                        Console.WriteLine("You chose a NewGame");
+                        Console.WriteLine("Loading . . .");
+                        break;
+                    case 2:
+                        Console.WriteLine("You chose to LoadGame");
+                        Console.WriteLine("Loading . . .");
+                        break;
+                    case 3:
+                        Console.WriteLine("You chose Options");
+                        Console.WriteLine("Loading . . .");
+                        break;
+                    case 4:
+                        on = false;
+                        Console.WriteLine("App Closing . . .");
+                        break;
+                    default:
+                        Console.WriteLine("You Chose a value that's  not in the list");
+                        Console.WriteLine("Please choose a number from the menu");
+                        value = int.Parse(Console.ReadLine());
+                        break;
+                }
+
             }
-            else if (input == 2)
-            {
-                Console.WriteLine("You selected to load your previous game");
-            }
-            else if (input == 3)
-            {
-                Console.WriteLine("You selected the Options menu");
-            }
-            else if (input == 4)
-            {
-                Console.WriteLine("Quitting game . . .");
-            }
-            else
-            {
-                Console.WriteLine("You wrote an invalid value");
-            }
-            Console.WriteLine();
-            Console.WriteLine("Press any key to quit . . .");
-            Console.ReadKey();
+
         }
     }
 }
